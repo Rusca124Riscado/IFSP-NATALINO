@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.neve-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    overflow: hidden;
+    z-index: 999; 
+}
+
+
+.floco {
+    position: absolute;
+    top: -20px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    user-select: none;
+    animation: cair linear infinite;
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.floco:nth-child(1) { left: 22%; animation-duration: 9s; animation-delay: 0s; font-size: 1rem; }
+.floco:nth-child(2) { left: 45%; animation-duration: 14s; animation-delay: 2.5s; font-size: 1.5rem; }
+.floco:nth-child(3) { left: 31%; animation-duration: 7s; animation-delay: 1s; font-size: 0.8rem; }
+.floco:nth-child(4) { left: 52%; animation-duration: 12s; animation-delay: 4s; font-size: 1.3rem; }
+.floco:nth-child(5) { left: 26%; animation-duration: 10s; animation-delay: 0.5s; font-size: 1.1rem; }
+.floco:nth-child(6) { left: 38%; animation-duration: 15s; animation-delay: 3s; font-size: 1.4rem; }
+.floco:nth-child(7) { left: 49%; animation-duration: 8s; animation-delay: 1.5s; font-size: 0.9rem; }
+.floco:nth-child(8) { left: 20%; animation-duration: 11s; animation-delay: 2s; font-size: 1.2rem; }
+
+body {
+    font-family: Roboto, sans-serif;
+    background-image: url("https://blog.spoongraphics.co.uk/wp-content/uploads/2012/12/15.png");
+    background-repeat: repeat;
+    animation: moverFundo 120s linear infinite;
+}
+@keyframes moverFundo {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 62.5rem 62.5rem; 
+    }
+}
+
+.verdao {
+    background-color: rgb(0, 218, 0);
+    border: 2px black solid;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 20%;
+    height: auto;
+}
+
+#title {
+    font-size: 1.875rem;
+    color: white;
+    padding-left: 20px;
+}
+
+#opcoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    color: white;
+    padding-right: 20px;
+}
+/*
+#ifsp-img {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 2px;
+}*/
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.bloco-noticias {
+    width: 300px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start;
+    /***color***/
+    background-color: whitesmoke;
+    border: 2px solid rgb(0, 218, 0);
+    /**animation**/
+    opacity: 0;
+    animation: fade-in 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+#faixa-verde-noticias {
+    display: flex;
+    background-color: rgb(0, 218, 0);
+    color: aliceblue;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+#noticias {
+    width: 100%;          
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left;     
+    gap: 10px;
+    padding: 20px;
+    opacity: 0;
+    animation: slide-up 2s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;
+}
+
+.comeco {
+    width: fit-content; 
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 30px;
+}
+
+#img {
+width: 400px;
+height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 4px greenyellow solid;
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+opacity: 0;
+transform: translateY(16px);
+animation: fade-in 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+#details {
+width: 500px;
+height: fit-content;
+justify-content: right;
+border: 4px greenyellow solid;
+border-radius: 10%;
+padding: 15px;
+background-color: white;
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+opacity: 0;
+transform: translateY(16px);
+animation: fade-in 3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+font-size: 1rem;
+}
+
+/**************/
+@keyframes fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes moverFundo {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 1000px;
+    }   
+}
+
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);    
+    }
+
+}
+
+.enfeite-estrela {
+    position: fixed;    
+    top: 35px;          
+    right: 30px;        
+    font-size: 3rem;   
+    z-index: 1000;     
+    display: block;
+    animation: flutuar 3s ease-in-out infinite, piscar 1.5s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
